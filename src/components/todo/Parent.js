@@ -23,6 +23,13 @@ export default function Parent() {
     setElements(copyElements);
     setCompletedTask([...CompletedTask, completedTask]);
   };
+
+  const handleUndoTask = (item, index) => {
+    setElements([...Elements, item]);
+    const copyCompletedTask = [...CompletedTask];
+    copyCompletedTask.splice(index, 1);
+    setCompletedTask(copyCompletedTask);
+  };
   return (
     <div className="__main">
       <div className="__left">
@@ -44,11 +51,10 @@ export default function Parent() {
               <div className="__specificItem">
                 <h1 className="__specificText">{item}</h1>
                 <button
-                  class="btn"
                   className="__deleteButton"
                   onClick={() => handleDeleteButton(index)}
                 >
-                  <i class="fa fa-trash"> Done</i>
+                  <i className="fa fa-trash"> Done</i>
                 </button>
               </div>
             );
@@ -56,7 +62,10 @@ export default function Parent() {
         </div>
       </div>
       <div className="__right">
-        <ChildComponent CompletedTask={CompletedTask} />
+        <ChildComponent
+          CompletedTask={CompletedTask}
+          handleUndoTask={handleUndoTask}
+        />
       </div>
     </div>
   );
