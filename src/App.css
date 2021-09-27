@@ -1,38 +1,93 @@
-.App {
+.main {
+  text-align: center;
+}
+.list {
+  background-color: green;
+}
+.blur {
+  opacity: 0.2;
+}
+.normal {
+  opacity: 1;
+}
+.bgColor {
+  background-color: red;
+}
+.container {
+  display: flex;
+}
+
+.left__side {
+  display: flex;
+  width: 40%;
+  height: 50px;
+}
+.right__side {
+  display: flex;
+  flex: 1;
+}
+
+.button {
+  width: 100px;
+  height: 50px;
+}
+
+.__main {
+  display: flex;
+}
+
+.__left {
+  flex: 1;
+}
+
+.__right {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.__todoInput {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.__inputField {
+  width: 200px;
+  height: 30px;
+  margin: 20px 10px 0 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.__saveButton {
+  width: 80px;
+  height: 35px;
+  margin: 20px 10px 0 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.__todoItem {
+  margin-top: 50px;
+}
+
+.__specificItem {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #cf6332;
+  border-style: dotted;
+  border-width: 3px;
+  margin-bottom: 10px;
+}
+
+.__specificText {
+  display: flex;
+  flex: 1;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
-
-.App-link {
-  color: #61dafb;
+.__deleteButton {
+  width: 80px;
+  height: 30px;
+  margin-top: 30px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.__completedTask {
+  text-align: center;
+}
+.__completedTaskText {
+  text-decoration: line-through;
 }
