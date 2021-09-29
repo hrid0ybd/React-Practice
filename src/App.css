@@ -92,3 +92,39 @@
 .__completedTaskText {
   text-decoration: line-through;
 }
+.__view_arr_list {
+  display: flex;
+  flex: 100;
+}
+.__leftside {
+  flex: 30;
+}
+.__rightside {
+  flex: 70;
+}
+.buttonName {
+  width: 100px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.add_button {
+  width: 150px;
+  padding: 10px;
+  margin: 10px;
+}
+.remove_button {
+  width: 150px;
+  padding: 10px;
+  margin: 10px;
+}
+.add_remove_arr_list {
+  display: flex;
+  flex: 100;
+}
+.add_arr_list {
+  flex: 50;
+}
+.remove_arr_list {
+  flex: 50;
+}
