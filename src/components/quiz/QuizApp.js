@@ -10,6 +10,8 @@ const Quiz = () => {
   const [number, setNumber] = useState(0);
   const [points, setPoints] = useState(0);
   const [negativePoints, setNegativePoints] = useState(0);
+  const [isChecked, setIsChecked] = useState(false);
+  const [storeAnswer, setStoreAnswer] = useState("");
 
   const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
 
@@ -52,12 +54,18 @@ const Quiz = () => {
 
   const pickAnswer = (event) => {
     let userAnswer = event.target.outerText;
+    setStoreAnswer(userAnswer);
     if (quiz[number].answer === userAnswer) {
       setPoints(points + 1);
     } else {
       setNegativePoints(negativePoints + 1);
     }
+    setIsChecked(true);
+  };
+
+  const handleGoForNext = () => {
     setNumber(number + 1);
+    setIsChecked(false);
   };
 
   return (
@@ -91,11 +99,19 @@ const Quiz = () => {
                 //   <label for="">{item}</label>
                 // </div>
 
-                <button key={index} onClick={pickAnswer} className="button">
+                <button key={index} onClick={pickAnswer} className="optionBtn">
                   {item}
                 </button>
               ))}
             </div>
+            {isChecked && (
+              <div>
+                <h1>You have choosen: {storeAnswer}</h1>
+                <h1>Correct answer is: {quiz[number].answer}</h1>
+              </div>
+            )}
+
+            <button onClick={handleGoForNext}>Next</button>
           </>
         )}
         {number === 5 && (

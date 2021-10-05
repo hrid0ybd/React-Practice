@@ -3,7 +3,13 @@
   padding: 20px;
   margin: 10px;
 }
-.button {
+.correct {
+  color: green;
+}
+.wrong {
+  color: red;
+}
+.optionBtn {
   height: 40px;
   width: 200px;
   display: block;
