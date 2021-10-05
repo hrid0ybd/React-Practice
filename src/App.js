@@ -8,15 +8,17 @@ import {
 import "./App.css";
 
 import ArrayHandling from "./components/array/ArrayHandling";
+import Quiz from "./components/quiz/QuizApp";
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Redirect to="/array" />
+          <Redirect to="/quiz" />
         </Route>
         <Route exact path="/array" component={ArrayHandling} />
+        <Route exact path="/quiz" component={Quiz} />
       </Switch>
     </Router>
   );
